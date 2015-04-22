@@ -1,0 +1,2 @@
+RewriteCond %{HTTP_USER_AGENT} ^.*Android.*$
+RewriteRule ^(.*)$ http://yourdomain.com/android [R=301]
