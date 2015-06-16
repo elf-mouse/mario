@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Prevent user scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="reset.css">
+  <style>
+  .scrollable {
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+  }
+
+  li {
+    height: 100px;
+    border-bottom: 1px solid;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="scrollable">
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+      <li>Item 6</li>
+      <li>Item 7</li>
+      <li>Item 8</li>
+      <li>Item 9</li>
+      <li>Item 10</li>
+    </ul>
+  </div>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+  // On a regular browser you can disable the touchmove on the document, which obtains the same result.
+  $('body').on('touchmove', function(e) {
+    if (!$('.scrollable').has($(e.target)).length) {
+      e.preventDefault();
+    }
+  });
+  </script>
+</body>
+
+</html>
